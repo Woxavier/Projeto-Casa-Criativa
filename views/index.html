@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Casa criativa - Ideias para crise</title>
+		<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+		
+		<link rel="stylesheet" href="/estilo.css">
+		<link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+
+
+	</head>
+
+	<body>
+
+		<div id="principal"><!--início principal-->
+
+			<section id="left"><!--início left-->
+								
+				<header>
+					<a href="/">
+						<img src="/logo.png" alt="Logo da empresa">
+					</a>	
+				</header>
+
+				<main>
+					<p>Ficar em casa em periodos longos, não dever ser nada fácil.</p>
+
+					<p>Por isso iremos catalogar 
+					<strong>ideias, brincadeiras, sugestões de livros, cursos, dicas
+					</strong> e tudo o que for
+					necessário para tornar esse contexto mais interessante. 
+					</p>
+
+					<p>Comece clicando em <a href="">ver ideias</a> para ver as ideias 
+					cadastradas e 
+					<a href="">contribua cadastrando
+					novas ideias.</a> </p>			
+				</main>		
+						
+				<section id="button">
+					<button onclick="onOff()">+ Adicionar ideia</button>
+					<a href="/idea" class="button">Ver ideias</a>
+				</section>	
+				
+				<footer id="footer">
+					Com ❤ <a href="http://rocketseat.com.br" target="_blanck">Rocketseat</a>
+				</footer>
+
+			</section><!--fim left-->
+
+			<section id="last-ideas">
+					
+				
+			{% for idea in ideas %}	
+				<div id="formatation-ideas">
+					<div class="idea">
+						<img src="{{idea.img}}" alt="Imagem de {{idea.img}}">
+					
+
+						<div class="content">
+							<h3>{{idea.title}}</h3>
+							<p>{{idea.categoria}}</p>
+
+							<div class="descricao">
+								{{idea.description}}
+							</div>	
+							<a href="{{idea.url}}">Ir para ideia</a>
+						</div>	
+						
+					</div>	
+				
+				</div>	
+			{% endfor %}			
+
+			</section><!-- fim Last ideas-->
+
+		
+		</div><!--fim principal-->
+
+		<!--MODAL-->
+		<div id="modal"class="hide">
+			<div class="content">
+				<h1>Nova ideia</h1>
+
+					<form action="">
+					<div class="input-wrapper">
+						<label for="title">Título da ideia</label>
+						<input type="text" name="title">
+					</div>
+
+					<div class="input-wrapper">
+						<label for="category">Categoria</label>
+						<input type="text" name="category">
+					</div>
+
+
+					<div class="input-wrapper">
+						<label for="image">Link da imagem</label>
+						<input type="url" name="image">
+					</div>
+
+
+					<div class="input-wrapper">
+						<label for="description">Digite uma descrição para a ideia</label>
+						<textarea name="description" id="" cols="30" rows="10"></textarea>
+					</div>
+
+
+					<div class="input-wrapper">
+						<label for="link">Link da ideia</label>
+						<input type="url" name="link">
+					</div>
+
+					<a href="#" onclick="onOff()">Voltar</a>
+					<button>Salvar</button>					
+					
+				</form>
+			</div>	
+		</div>
+		
+		
+		
+		
+		<script src="script.js"></script>
+
+
+			
+		
+	</body>
+</html>

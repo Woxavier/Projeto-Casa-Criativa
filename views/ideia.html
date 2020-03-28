@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <title>Ideias - Casa Criativa</title>
+        <link rel="stylesheet" href="estilo.css">
+    </head>
+    <body id="page-idea">
+            
+        <div id="principal">
+            <header>
+               <a href="/"><img src="/logo.png" alt="Logo da marcar"></a>
+                <nav>
+                    <li><a href="/">Início</a></li>
+                    <li><a href="#" onclick="onOff()" class="button">Nova ideia</a></li>
+                </nav>
+            </header>
+
+            <section id="title">
+                <p>Em exibição</p>
+                <h1>Ideias</h1>
+            </section>
+
+            <main>
+                <section id="ideas">
+                                            
+                        {% for idea in ideas %}	
+                        <div id="formatation-ideas">
+                            <div class="idea">
+                                <img src="{{idea.img}}" alt="Imagem de {{idea.img}}">
+                            
+        
+                                <div class="content">
+                                    <h3>{{idea.title}}</h3>
+                                    <p>{{idea.categoria}}</p>
+        
+                                    <div class="descricao">
+                                        {{idea.description}}
+                                    </div>	
+                                    <a href="{{idea.url}}">Ir para ideia</a>
+                                </div>	
+                                
+                            </div>	
+                        
+                        </div>	
+                     {% endfor %}
+
+
+                </section><!-- fim Last ideas-->
+            </main>
+
+            <footer id="footer">
+                Com ❤ <a href="http://rocketseat.com.br" target="_blanck">Rocketseat</a>
+            </footer>   
+        </div><!--Fim principal-->
+            
+        <!--MODAL-->
+		<div id="modal"class="hide">
+			<div class="content">
+				<h1>Nova ideia</h1>
+
+					<form action="">
+					<div class="input-wrapper">
+						<label for="title">Título da ideia</label>
+						<input type="text" name="title">
+					</div>
+
+					<div class="input-wrapper">
+						<label for="category">Categoria</label>
+						<input type="text" name="category">
+					</div>
+
+
+					<div class="input-wrapper">
+						<label for="image">Link da imagem</label>
+						<input type="url" name="image">
+					</div>
+
+
+					<div class="input-wrapper">
+						<label for="description">Digite uma descrição para a ideia</label>
+						<textarea name="description" id="" cols="30" rows="10"></textarea>
+					</div>
+
+
+					<div class="input-wrapper">
+						<label for="link">Link da ideia</label>
+						<input type="url" name="link">
+					</div>
+
+					<a href="#" onclick="onOff()">Voltar</a>
+					<button>Salvar</button>					
+					
+				</form>
+			</div>	
+		</div>
+		
+		
+		
+		
+		<script src="script.js"></script>
+
+    </body>
+</html>
