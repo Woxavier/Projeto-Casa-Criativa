@@ -10,4 +10,7 @@ Tecnologias ultilizadas:
 #HTML<br>
 #CSS<br>
 #JSON<br>
+#Express<br>
+#nodemun<br>
+#nunjucks<br>
 
